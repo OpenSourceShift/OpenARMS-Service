@@ -111,17 +111,6 @@ public abstract class APIController extends Controller {
 			if(Play.mode.equals(Play.Mode.DEV)) {
 				Fixtures.deleteAllModels();
 				Fixtures.loadModels(yaml_file);
-				
-				// Create the binding
-				/*
-		        User user = User.find("byEmail", "spam@creen.dk").first();
-		        SimpleAuthenticationBinding authBinding = new SimpleAuthenticationBinding();
-		        authBinding.user = user;
-		        authBinding.password = "openarms";
-		        authBinding.save();
-		        user.authenticationBinding = authBinding;
-		        user.authenticationBinding.save();
-		        */
 		        
 				renderJSON(new EmptyResponse().toJson());
 			} else {

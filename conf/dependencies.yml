@@ -4,11 +4,21 @@ require:
     - play 1.2.5
     - play -> crud
     - play -> secure
-    - development -> OpenARMS-Authentication-CAS 0.1
+    - OpenARMS -> OpenARMS-API 0.3
+    - OpenARMS -> OpenARMS-Authentication-CAS-Service 0.1
 
 repositories:
-    - development:
+    - OpenARMS:
         type:       local
-        artifact:   "${application.path}/../../OpenARMS-Authentication-CAS/dist/[module]-[revision].zip"
+        artifact:   "/home/creen/Projects/OpenARMS/[module]"
         contains:
-            - development -> OpenARMS-Authentication-CAS
+            - OpenARMS -> OpenARMS-API
+            - OpenARMS -> OpenARMS-Service
+            - OpenARMS -> OpenARMS-Frontend
+    - OpenARMS-CAS:
+        type:       local
+        artifact:   "/home/creen/Projects/OpenARMS/OpenARMS-Authentication-CAS/[module]"
+        contains:
+            - OpenARMS -> OpenARMS-Authentication-CAS-API
+            - OpenARMS -> OpenARMS-Authentication-CAS-Service
+            - OpenARMS -> OpenARMS-Authentication-CAS-Frontend
