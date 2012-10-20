@@ -5,6 +5,7 @@ require:
     - play -> crud
     - play -> secure
     - OpenARMS -> OpenARMS-API 0.3
+    - OpenARMS -> OpenARMS-Authentication-CAS-API 0.1
     - OpenARMS -> OpenARMS-Authentication-CAS-Service 0.1
 
 repositories:
