@@ -7,6 +7,8 @@ play-1.2.4/*
 modules/
 eclipse/
 tmp/
+logs/
+test-result/
 
 # Virtual eclipse folders 
 OpenARMS-Authentication-CAS-API/
