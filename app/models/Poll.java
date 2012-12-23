@@ -302,4 +302,8 @@ public class Poll extends Model implements Jsonable {
 		
 		return result;
     }
+    
+	public String toString() {
+		return "(#"+id+" / "+token+") \""+question+"\" (by #"+admin.id+" "+admin.name+")";
+	}
 }

@@ -11,5 +11,5 @@ import play.mvc.With;
 @With(Secure.class)
 @CRUD.For(models.User.class)
 public class Users extends CRUD {
-
+	
 }

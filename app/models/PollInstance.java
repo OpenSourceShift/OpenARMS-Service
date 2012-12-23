@@ -144,4 +144,9 @@ public class PollInstance extends Model implements Comparable<PollInstance>, Jso
 	public boolean closed() {
 		return endDateTime.before(Calendar.getInstance().getTime());
 	}
+	
+	@Override
+	public String toString() {
+		return "(#"+id+") instance of (#"+poll.id+" / "+poll.token+ ")";
+	}
 }

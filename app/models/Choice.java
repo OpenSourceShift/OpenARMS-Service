@@ -151,4 +151,8 @@ public class Choice extends Model implements Jsonable {
     	}
 		return choice;
     }
+    
+	public String toString() {
+		return "#"+id+" \""+text+"\" (for poll #"+poll.id+" / "+poll.token+")";
+	}
 }

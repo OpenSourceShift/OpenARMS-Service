@@ -21,6 +21,11 @@ import api.entities.UserJSON;
  */
 @Entity
 public class User extends Model implements Jsonable {
+	@Override
+	public String toString() {
+		return "("+id+") "+name+" ["+email+"]";
+	}
+
 	/**
 	 * Name of the user.
 	 */
@@ -77,4 +82,6 @@ public class User extends Model implements Jsonable {
 		result.secret = json.secret;
 		return result;
 	}
+	
+	
 }
