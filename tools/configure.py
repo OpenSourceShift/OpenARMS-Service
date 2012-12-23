@@ -47,17 +47,26 @@ def getOrCopyFile(src, dst):
 			raise "Couldn't copy the file."
 
 if __name__ == '__main__':
+	automated = "automatic" in sys.argv
 	printBanner()
 	configurationFile = getOrCopyConfigurationFile()
 
 	print 'You will have to select the username and password for the administrative user, to gain access to the administrative CRUD interface.';
 	print 'Please notice that this will be stored encrypted and hashed in the configuration file of the Service.'
-	adminUser = raw_input('Administrative username (leave blank for admin): ');
+
+	if automated:
+		adminUser = 'admin'
+	else:
+		adminUser = raw_input('Administrative username (leave blank for admin): ')
+
 	if not adminUser:
 		adminUser = 'admin'
 
 	adminPassword = None
-	adminPassword = getpass('Administrative password: ');
+	if automated:
+		adminPassword = 'automatic'
+	else:
+		adminPassword = getpass('Administrative password: ');
 
 	if len(adminPassword) < 6:
 		print "It is strongly disencouraged to use passwords of length lesser than 8 characters."
